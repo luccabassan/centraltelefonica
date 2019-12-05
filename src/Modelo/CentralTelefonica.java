@@ -5,7 +5,6 @@ public class CentralTelefonica {
 	private String modelo; // nome da central
 
 	private static int tipoRamal[] = { 0, 1, 2 }; // "analogico", "ip", "digital"
-
 	private int qtdadeRamal[]; // atribuição das qtdades { 60, 0, 100 };
 
 	private static int tipoTronco[] = { 0, 1, 2 }; // "analogico", "ip", "digital"
