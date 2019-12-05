@@ -1,5 +1,13 @@
 package Modelo;
 
+/**
+ * @author Senai
+ * 
+ * As categorias que uilizaremos inicialmente são: 
+ *  - Centrais Híbricas 
+ *  - Centrais IP
+ *
+ */
 public class Categoria {
 
 	private int codigo;

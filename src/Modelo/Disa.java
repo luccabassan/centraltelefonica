@@ -2,6 +2,6 @@ package Modelo;
 
 public enum Disa {
 
-	MULTINIVEL, SIMPLES;
+	NENHUMA, MULTINIVEL, SIMPLES;
 
 }
