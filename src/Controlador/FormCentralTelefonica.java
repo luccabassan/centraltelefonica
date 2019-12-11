@@ -6,6 +6,7 @@ import Modelo.Capacidade;
 import Modelo.Categoria;
 import Modelo.CentralTelefonica;
 import Modelo.Disa;
+import com.google.gson.Gson;
 
 public class FormCentralTelefonica {
 
@@ -104,9 +105,12 @@ public class FormCentralTelefonica {
 
 		ct.setCapacidadeRamalIP(new Capacidade(capMinRamalIp, capMaxRamalIp));
 
+		Gson gson = new Gson();
+		String json = gson.toJson(ct);
+		
 		try {
 			
-			Persistencia.salvar(ct.getModelo(), "persistencia.json");
+			Persistencia.salvar(json, "persistencia.json");
 			
 			System.out.println("Central telefônica cadastrada com sucesso!");
 		} catch (Exception e) {
@@ -114,7 +118,26 @@ public class FormCentralTelefonica {
 			System.err.println(e.getMessage());
 		}
 		
+
+	}
+	
+	public void listagem() {
 		
+		String texto = null;
+		
+		try {
+			
+			texto = Persistencia.ler("persistencia.json");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		Gson gson = new Gson();
+		
+		CentralTelefonica ct = (CentralTelefonica) gson.fromJson(texto, CentralTelefonica.class); 
+		
+		System.out.println("Modelo: " + ct.getModelo());
+		System.out.println("Categoria: " + ct.getCategoria().getCategoria());
 
 	}
 

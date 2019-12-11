@@ -82,6 +82,8 @@ public class Menu {
 
 	private void listarCentralTelefonica() {
 		// TODO Auto-generated method stub
+		FormCentralTelefonica form = new FormCentralTelefonica();
+		form.listagem();
 		System.out.println("Executar a listagem de centrais telefônicas");
 
 	}

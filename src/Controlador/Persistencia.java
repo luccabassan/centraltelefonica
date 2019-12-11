@@ -14,9 +14,20 @@ public class Persistencia {
         buffWrite.close();
     }
 
-	public boolean ler() {
+	public static String ler(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
 
-		return true;
-	}
+        String linha = buffRead.readLine();
+        
+		/*
+		 * String linha = ""; while (true) { if (linha != null) {
+		 * System.out.println(linha);
+		 * 
+		 * } else break; linha = buffRead.readLine(); }
+		 */
+        buffRead.close();
+        
+        return linha;
+    }
 
 }
