@@ -15,7 +15,7 @@ public class Menu {
 
 	public void printBemvindo() {
 
-		System.out.println("_________________________________________________________________");
+		System.out.println(" ________________________________________________________________");
 		System.out.println("|                                                                |");
 		System.out.println("|    Bem-vindo ao Sistema de Soluções de Centrais Telefônicas    |");
 		System.out.println("|________________________________________________________________|");
