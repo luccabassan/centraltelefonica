@@ -4,12 +4,6 @@ public class CentralTelefonica {
 
 	private String modelo; // nome da central
 
-	private static int tipoRamal[] = { 0, 1, 2 }; // "analogico", "ip", "digital"
-	private int qtdadeRamal[]; // atribuição das qtdades { 60, 0, 100 };
-
-	private static int tipoTronco[] = { 0, 1, 2 }; // "analogico", "ip", "digital"
-	private int qtdadeTronco[]; // atribuição das qtdades { 10, 0, 0 };
-
 	private Categoria categoria; // tipo da central, se é híbrida ou ip
 
 	private Disa disa; // variável enum que especifica o tipo de Disa
@@ -22,21 +16,16 @@ public class CentralTelefonica {
 	private Capacidade capacidadeRamalDigital;
 	private Capacidade capacidadeRamalIP;
 
-	private Placa placa;
-
 	public CentralTelefonica() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public CentralTelefonica(String modelo, int[] qtdadeRamal, int[] qtdadeTronco, Categoria categoria, Disa disa,
-			float preco, Capacidade capacidadeLinhaAnalogica, Capacidade capacidadeLinhaDigital,
-			Capacidade capacidadeLinhaIP, Capacidade capacidadeRamalAnalogico, Capacidade capacidadeRamalDigital,
-			Capacidade capacidadeRamalIP, Placa placa) {
+	public CentralTelefonica(String modelo, Categoria categoria, Disa disa, float preco,
+			Capacidade capacidadeLinhaAnalogica, Capacidade capacidadeLinhaDigital, Capacidade capacidadeLinhaIP,
+			Capacidade capacidadeRamalAnalogico, Capacidade capacidadeRamalDigital, Capacidade capacidadeRamalIP) {
 		super();
 		this.modelo = modelo;
-		this.qtdadeRamal = qtdadeRamal;
-		this.qtdadeTronco = qtdadeTronco;
 		this.categoria = categoria;
 		this.disa = disa;
 		this.preco = preco;
@@ -46,8 +35,6 @@ public class CentralTelefonica {
 		this.capacidadeRamalAnalogico = capacidadeRamalAnalogico;
 		this.capacidadeRamalDigital = capacidadeRamalDigital;
 		this.capacidadeRamalIP = capacidadeRamalIP;
-		this.placa = placa;
-
 	}
 
 	public String getModelo() {
@@ -56,38 +43,6 @@ public class CentralTelefonica {
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
-	}
-
-	public static int[] getTipoRamal() {
-		return tipoRamal;
-	}
-
-	public static void setTipoRamal(int[] tipoRamal) {
-		CentralTelefonica.tipoRamal = tipoRamal;
-	}
-
-	public int[] getQtdadeRamal() {
-		return qtdadeRamal;
-	}
-
-	public void setQtdadeRamal(int[] qtdadeRamal) {
-		this.qtdadeRamal = qtdadeRamal;
-	}
-
-	public static int[] getTipoTronco() {
-		return tipoTronco;
-	}
-
-	public static void setTipoTronco(int[] tipoTronco) {
-		CentralTelefonica.tipoTronco = tipoTronco;
-	}
-
-	public int[] getQtdadeTronco() {
-		return qtdadeTronco;
-	}
-
-	public void setQtdadeTronco(int[] qtdadeTronco) {
-		this.qtdadeTronco = qtdadeTronco;
 	}
 
 	public Categoria getCategoria() {
@@ -160,14 +115,6 @@ public class CentralTelefonica {
 
 	public void setCapacidadeRamalIP(Capacidade capacidadeRamalIP) {
 		this.capacidadeRamalIP = capacidadeRamalIP;
-	}
-
-	public Placa getPlaca() {
-		return placa;
-	}
-
-	public void setPlaca(Placa placa) {
-		this.placa = placa;
 	}
 
 	/*

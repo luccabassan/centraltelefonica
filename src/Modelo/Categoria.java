@@ -10,7 +10,6 @@ package Modelo;
  */
 public class Categoria {
 
-	private int codigo;
 	private String categoria;
 
 	public Categoria() {
@@ -18,18 +17,9 @@ public class Categoria {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Categoria(int codigo, String categoria) {
+	public Categoria(String categoria) {
 		super();
-		this.codigo = codigo;
 		this.categoria = categoria;
-	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
 	}
 
 	public String getCategoria() {
