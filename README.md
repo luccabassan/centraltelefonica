@@ -4,7 +4,7 @@ Sistema para consulta de soluções de centrais telefônicas
 ## Pré-requisito:
 
 1. Library Gson 
-> Biblioteca responsável transformar object em json e vice-versa
+> Biblioteca responsável por transformar object em json e vice-versa. A ideia de utilizar esta lib é facilitar a persistência do dados em arquivo
 
 > [URL de download](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.6.2/gson-2.6.2.jar)
 
