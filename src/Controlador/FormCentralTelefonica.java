@@ -1,5 +1,6 @@
 package Controlador;
 
+import java.util.List;
 import java.util.Scanner;
 
 import Modelo.Capacidade;
@@ -107,52 +108,73 @@ public class FormCentralTelefonica {
 
 		Gson gson = new Gson();
 		String json = gson.toJson(ct);
-		
+
 		try {
-			
+
 			Persistencia.salvar(json, "persistencia.json");
-			
+
 			System.out.println("Central telefônica cadastrada com sucesso!");
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.err.println(e.getMessage());
 		}
-		
 
 	}
-	
+
 	public void listagem() {
-		
-		String texto = null;
-		
+
+		List<CentralTelefonica> objCentral;
+		int contador = 1;
+
 		try {
-			
-			texto = Persistencia.ler("persistencia.json");
+
+			objCentral = Persistencia.ler("persistencia.json");
+
+			for (CentralTelefonica ct : objCentral) {
+
+				if (ct == null) {
+					continue;
+				}
+				this.printCentralTelefonica(ct, contador);
+				contador++;
+
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		Gson gson = new Gson();
-		
-		CentralTelefonica ct = (CentralTelefonica) gson.fromJson(texto, CentralTelefonica.class); 
-		
-		System.out.println("Modelo: " + ct.getModelo());
-		System.out.println("Categoria: " + ct.getCategoria().getCategoria());
-		System.out.println("Tipo de DISA: " + ct.getDisa());
-		System.out.println("Preço da Central: " + ct.getPreco());
-		System.out.println("Capacidade de linhas analógicas:");
-		System.out.println("Mín: "+ ct.getCapacidadeLinhaAnalogica().getMinima()+"| Máx: "+ ct.getCapacidadeLinhaAnalogica().getMaxima());
-		System.out.println("Capacidade de linhas Digitais:");
-		System.out.println("Mín: "+ ct.getCapacidadeLinhaDigital().getMinima()+"| Máx: "+ ct.getCapacidadeLinhaDigital().getMaxima());
-		System.out.println("Capacidade de linhas IP:");
-		System.out.println("Mín: "+ ct.getCapacidadeLinhaIP().getMinima()+"| Máx: "+ ct.getCapacidadeLinhaIP().getMaxima());
-		System.out.println("Capacidade de Ramais analógicos:");
-		System.out.println("Mín: "+ ct.getCapacidadeRamalAnalogico().getMinima()+"| Máx: "+ ct.getCapacidadeRamalAnalogico().getMaxima());
-		System.out.println("Capacidade de Ramais Digitais:");
-		System.out.println("Mín: "+ ct.getCapacidadeRamalDigital().getMinima()+"| Máx: "+ ct.getCapacidadeRamalDigital().getMaxima());
-		System.out.println("Capacidade de Ramais IP:");
-		System.out.println("Mín: "+ ct.getCapacidadeRamalIP().getMinima()+"| Máx: "+ ct.getCapacidadeRamalIP().getMaxima());
-		
+
+	}
+
+	private void printCentralTelefonica(CentralTelefonica ct, int contador) {
+
+		System.out.println(contador + ". ________________________________");
+		System.out.println("|");
+
+		System.out.println("|  Modelo: " + ct.getModelo());
+		System.out.println("|  Categoria: " + ct.getCategoria().getCategoria());
+		System.out.println("|  Tipo de DISA: " + ct.getDisa());
+		System.out.println("|  Preço da Central: " + ct.getPreco());
+		System.out.println("|  Capacidade de linhas analógicas:");
+		System.out.println("|     Mín: " + ct.getCapacidadeLinhaAnalogica().getMinima() + ", Máx: "
+				+ ct.getCapacidadeLinhaAnalogica().getMaxima());
+		System.out.println("|  Capacidade de linhas Digitais:");
+		System.out.println("|     Mín: " + ct.getCapacidadeLinhaDigital().getMinima() + ", Máx: "
+				+ ct.getCapacidadeLinhaDigital().getMaxima());
+		System.out.println("|  Capacidade de linhas IP:");
+		System.out.println(
+				"|  Mín: " + ct.getCapacidadeLinhaIP().getMinima() + ", Máx: " + ct.getCapacidadeLinhaIP().getMaxima());
+		System.out.println("|  Capacidade de Ramais analógicos:");
+		System.out.println("|     Mín: " + ct.getCapacidadeRamalAnalogico().getMinima() + ", Máx: "
+				+ ct.getCapacidadeRamalAnalogico().getMaxima());
+		System.out.println("|  Capacidade de Ramais Digitais:");
+		System.out.println("|     Mín: " + ct.getCapacidadeRamalDigital().getMinima() + ", Máx: "
+				+ ct.getCapacidadeRamalDigital().getMaxima());
+		System.out.println("|  Capacidade de Ramais IP:");
+		System.out.println("|     Mín: " + ct.getCapacidadeRamalIP().getMinima() + ", Máx: "
+				+ ct.getCapacidadeRamalIP().getMaxima());
+
+		System.out.println("|__________________________________");
 
 	}
 
