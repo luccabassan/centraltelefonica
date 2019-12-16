@@ -57,7 +57,7 @@ public class Menu {
 			this.listarCentralTelefonica();
 			break;
 		case "R":
-			this.listarCentralTelefonica();
+			this.consultarSolucao();
 			break;
 		case "F":
 			this.sair();
@@ -76,21 +76,20 @@ public class Menu {
 		// TODO Auto-generated method stub
 		FormCentralTelefonica form = new FormCentralTelefonica();
 		form.formulario();
-		System.out.println("Executar o cadatro de central telefônica");
 
 	}
 
 	private void listarCentralTelefonica() {
 		// TODO Auto-generated method stub
 		FormCentralTelefonica form = new FormCentralTelefonica();
-		form.listagem();
-		System.out.println("Executar a listagem de centrais telefônicas");
+		form.printCentrais();
 
 	}
 
 	private void consultarSolucao() {
 		// TODO Auto-generated method stub
-		System.out.println("Executar a consulta da melhor solução");
+		Solucao solucao = new Solucao();
+		solucao.pergunta();
 
 	}
 
