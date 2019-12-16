@@ -18,6 +18,10 @@ public class FormCentralTelefonica {
 		this.entrada = new Scanner(System.in);
 	}
 
+	/*
+	 * Método/formulário de central telefônica. É capturado os valores de entrada e
+	 * armazenado em arquivo texto
+	 */
 	public void formulario() {
 
 		CentralTelefonica ct = new CentralTelefonica();
@@ -29,6 +33,11 @@ public class FormCentralTelefonica {
 		System.out.println("Digite a categoria: ");
 		String categoria = this.entrada.nextLine();
 
+		/*
+		 * A ideia inicial da classe Categoria era permitir flexibilidade para o
+		 * usuário, mas não deu tempo para criar um cadastro de categorias. Desda forma
+		 * a categoria acabou ficando um registro aberto
+		 */
 		Categoria cat = new Categoria(categoria);
 		ct.setCategoria(cat);
 
@@ -37,6 +46,10 @@ public class FormCentralTelefonica {
 
 		Disa disa;
 
+		/*
+		 * Uma central não pode ser multinível e simples ao mesmo tempo, por isso esta
+		 * validação
+		 */
 		if (!multinivel.equalsIgnoreCase("s")) {
 
 			System.out.println("Possui DISA simples [s/n]? ");
@@ -106,7 +119,14 @@ public class FormCentralTelefonica {
 
 		ct.setCapacidadeRamalIP(new Capacidade(capMinRamalIp, capMaxRamalIp));
 
+		/*
+		 * Biblioteca da Google que simplifica o uso de objetos e json
+		 */
 		Gson gson = new Gson();
+		/*
+		 * Converto o objeto CentralTelefonica para json, assim facilita para armanezar
+		 * os dados em arquvio texto
+		 */
 		String json = gson.toJson(ct);
 
 		try {
@@ -121,6 +141,9 @@ public class FormCentralTelefonica {
 
 	}
 
+	/*
+	 * Método que busca os registros de centrais telefônicas armazenadas em arquivo
+	 */
 	public void printCentrais() {
 
 		List<CentralTelefonica> objCentral;
@@ -147,6 +170,9 @@ public class FormCentralTelefonica {
 
 	}
 
+	/*
+	 * Método que impimi o objeto CentralTelefonica
+	 */
 	public void imprimiCentralTelefonica(CentralTelefonica ct, int contador) {
 
 		System.out.println(contador + ". ________________________________");

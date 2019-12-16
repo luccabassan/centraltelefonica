@@ -1,5 +1,9 @@
 package Modelo;
 
+/*
+ * Várias características de uma central telefônica podem conter capacidade 
+ * mínima e máxima
+ */
 public class Capacidade {
 
 	private int minima;

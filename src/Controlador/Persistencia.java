@@ -13,6 +13,12 @@ import Modelo.CentralTelefonica;
 
 public class Persistencia {
 
+	/*
+	 * Método que salva num arquivo texto os valores de entrada da central
+	 * telefônica
+	 * Cada linha do arquivo é equivalente a um registro de central
+	 * telefônica
+	 */
 	public static void salvar(String content, String path) throws IOException {
 
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path, true));
@@ -20,6 +26,9 @@ public class Persistencia {
 		buffWrite.close();
 	}
 
+	/*
+	 * Método que retorna uma lista de objetos tipo CentralTelefonica
+	 */
 	public static List<CentralTelefonica> ler(String path) throws IOException {
 		BufferedReader buffRead = new BufferedReader(new FileReader(path));
 

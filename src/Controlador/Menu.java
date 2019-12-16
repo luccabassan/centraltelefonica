@@ -50,20 +50,28 @@ public class Menu {
 		String menu = this.entrada.next();
 
 		switch (menu.toUpperCase()) {
+//		 o usuário tem que digitar a letra C para abrir o formulário de central
+//		 telefônica
 		case "C":
 			this.cadastrarCentralTelefonica();
 			break;
+//		 o usuário tem que digitar a letra L para listar as centrais telefônicas
+//		 cadastradas
 		case "L":
 			this.listarCentralTelefonica();
 			break;
+//		 o usuário tem que digitar a letra R busca por soluções
 		case "R":
 			this.consultarSolucao();
 			break;
+//		 o usuário tem que digitar a letra F fechar o programa
 		case "F":
 			this.sair();
 			ativo = false;
 			break;
 		default:
+//			Caso o usuário digite uma letra diferente das citadas acima o 
+//			programa imprimi uma mensagem de erro
 			System.err.println("Opção digitada inválida!");
 			break;
 		}
@@ -73,28 +81,31 @@ public class Menu {
 	}
 
 	private void cadastrarCentralTelefonica() {
-		// TODO Auto-generated method stub
+//		instancia classe do formulário de central telefônica
 		FormCentralTelefonica form = new FormCentralTelefonica();
+//		Abre formulário para o usuário dar entrada nos campos
 		form.formulario();
 
 	}
 
 	private void listarCentralTelefonica() {
-		// TODO Auto-generated method stub
+//		instancia classe do formulário de central telefônica
 		FormCentralTelefonica form = new FormCentralTelefonica();
 		form.printCentrais();
 
 	}
 
 	private void consultarSolucao() {
-		// TODO Auto-generated method stub
+//		instancia classe da solução
 		Solucao solucao = new Solucao();
+//		Abre formulário de perguntas para que o sistema identifique 
+//		as melhores soluçãos baseadas no que o usuário digitou
 		solucao.pergunta();
 
 	}
 
 	private void sair() {
-		// TODO Auto-generated method stub
+
 		System.out.println("Fim do programa!");
 
 	}
