@@ -14,11 +14,11 @@ Sistema para consulta de soluções de centrais telefônicas
 ## Características e funcionalidades:
 
 1 Cadastro de central telefônica
-> Formulário para entrada dos atributos de uma central telefônica
+> Formulário para entrada dos atributos de uma central telefônica.
 > Os dados são salvos em arquivo JSON
 
 2 Listagem de centrais telefônicas
-> Apresenta a lista de todas os registros armazendos
+> Apresenta a lista de todas os registros armazenados
 
 3 Busca por soluções
-> O sitema possui um formulário simples, com 6 perguntas, e baseado na resposta do usuário o sistema encontra as centrais telefônicas que se enquadram nos requitos
+> O sitema possui um formulário simples, com 6 perguntas, e baseado na resposta do usuário o sistema encontra as centrais telefônicas que se enquadram nos resitos
